@@ -22,7 +22,8 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Clone
         uses: actions/checkout@v3
-          token: ${{ secretes.ACCESS_TOKEN }}
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
           repository: MIZOGUCHIKoki/ConfigFiles
           path: ConfigFiles
       - name: Move files
