@@ -50,7 +50,7 @@ jobs:
           npm install
       - name: Correct
         run: |
-          npx textlint --fix **/**.tex
+          npx textlint --fix articles/* books/*
       - name: Remove and restore useless files
         if: ${{ always() }}
         run: |
