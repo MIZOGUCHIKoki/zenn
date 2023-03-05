@@ -6,15 +6,15 @@ on:
       - edited
 
 jobs:
-  job_correction_MAIN:
-  if: (github.event.issue.pull_request != null) && github.event.comment.body == 'correction'
+  job_correction_CALLED:
+    if: (github.event.issue.pull_request != null) && github.event.comment.body == 'correction'
     runs-on: ubuntu-latest
     steps:
       - name: Github-Script
         uses: actions/github-script@v2
         id: set-target-branch
         with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
+          github-token: ${{ secrets.gh_token }}
           result-encoding: string
           script: |
             const pull_request = await github.pulls.get({
@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ steps.set-target-branch.outputs.result }}
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.gh_token }}
       - name: Clone
         uses: actions/checkout@v3
         with:
@@ -51,7 +51,7 @@ jobs:
           npm install
       - name: Correct
         run: |
-          npx textlint --fix articles/* books/*
+          npx textlint --fix **/**.tex
       - name: Remove useless files
         if: ${{ always() }}
         run: |
