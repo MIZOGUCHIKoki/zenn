@@ -4,10 +4,10 @@ on:
     branches:
       - main
     paths:
-      - '**/**.tex'
+      - '**/**.md'
   pull_request:
     paths:
-      - '**/**.tex'
+      - '**/**.md'
   
 jobs:
   run-textlint_WF:
