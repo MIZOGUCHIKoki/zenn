@@ -39,7 +39,6 @@ jobs:
           cp  ./ConfigFiles/tex_textlint/package.json ./
           cp  ./ConfigFiles/tex_textlint/.textlintrc.json ./
           cp  ./ConfigFiles/tex_textlint/package-lock.json ./
-          cp  ./ConfigFiles/.gitconfig ./
             
       - name: Setup-node
         uses: actions/setup-node@v3
@@ -52,10 +51,11 @@ jobs:
       - name: Correct
         run: |
           npx textlint --fix **/**.tex
-      - name: Remove useless files
+      - name: Remove and restore useless files
         if: ${{ always() }}
         run: |
-          rm -rf ConfigFiles node_modules package-lock.json package.json .textlintrc.json .gitconfig
+          git restore package.json package-lock.json
+          rm -rf .textlintrc.json
       - name: Check changed files
         if: ${{ always() }}
         id: diffcheck
