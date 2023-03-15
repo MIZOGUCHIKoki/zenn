@@ -21,7 +21,7 @@ published: true
 \end{document}
 ```
 ## 出力結果
-![](/images/ddbc20b7e68b0e/fig1.png)*図1*
+![](/images/ddbc21b7e68b0e/fig1.png)*図1*
 
 # 参考
 - 美文書本 p147
