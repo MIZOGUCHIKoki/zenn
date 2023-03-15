@@ -24,4 +24,4 @@ published: true
 ![](/images/ddbc21b7e68b0e/fig1.png)*図1*
 
 # 参考
-- 美文書本［p.147]
+- 美文書本［p.147］
