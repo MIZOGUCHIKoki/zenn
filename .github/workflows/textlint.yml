@@ -1,4 +1,4 @@
-name: run-textlint
+name: Textlint
 on: 
   push:
     branches:
