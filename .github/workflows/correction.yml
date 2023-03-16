@@ -1,4 +1,4 @@
-name: correction
+name: Correction
 on:
   issue_comment:
     types:
