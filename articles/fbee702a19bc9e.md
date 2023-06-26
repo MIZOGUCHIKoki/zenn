@@ -1,5 +1,5 @@
 ---
-title: "【LaTeX】Chapterページにページスタイルを適用する"
+title: "【LaTeX】Chapterページにpagestyleを適用する"
 emoji: "📃"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [LaTeX]
